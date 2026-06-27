@@ -1,0 +1,248 @@
+/*  ✪ https://zam.usite.pro/publ/...
+    ✫ Версия 1.0.0
+    © Copyright Плюшки для сайтов 2024
+*/
+
+/* ✦ --all-.. .all-c.. Цвета ✦ *//* #region */
+/*  • --all-C            = color title, border, backgraund, box-shadow inset
+    • --all-Ct           = текст послабей для текста
+    
+    • --all-bg           = backgraund
+    • --all-bg-93        = backgraund (Прозрацный тёмный) !!Подходит для всплывающих окон
+    • --all-bg-20        = backgraund (Прозрацный)
+    
+    • --all-br:          = border
+
+    • --all-b-sh         = box-shadow
+    • --all-t-sh         = text-shadow
+*/
+[class*="all-c0"] {/*0~> */
+  --all-C: #f44;
+  --all-Ct: #f44c;
+  --all-bg: #faa;
+  --all-bg-93: #200e;
+  --all-bg-20: #f442;
+  --all-br: #511;
+  --all-b-sh: #f448;
+}
+.temaT .all-c0 {/* 0 Для тёмного фона */
+  --all-bg: #722
+}
+
+[class*="all-c1"] {/*1~> */
+  --all-C: #0b0;
+  --all-Ct: #0b0c;
+  --all-bg: #9d9;
+  --all-bg-93: #020e;
+  --all-bg-20: #0b02;
+  --all-br: #151;
+  --all-b-sh: #0b06;
+}
+.temaT .all-c1 {
+  --all-bg: #050
+}
+
+[class*="all-c2"] {/*2~> */
+  --all-C: #f90;
+  --all-Ct: #f90c;
+  --all-bg: #fb6;
+  --all-bg-93: #210e;
+  --all-bg-20: #f902;
+  --all-br: #530;
+  --all-b-sh: #f909;
+}
+.temaT .all-c2 {
+  --all-bg: #960
+}
+
+[class*="all-c3"] {/*3~> */
+  --all-C: #dd0;
+  --all-Ct: #dd0c;
+  --all-bg: #ee7;
+  --all-bg-93: #220e;
+  --all-bg-20: #dd02;
+  --all-br: #551;
+  --all-b-sh: #dd09;
+}
+.temaT .all-c3 {
+  --all-bg: #880
+}
+
+[class*="all-c4"] {/*4~> */
+  --all-C: #08f;
+  --all-Ct: #08fc;
+  --all-bg: #8be;
+  --all-bg-93: #012e;
+  --all-bg-20: #08f2;
+  --all-br: #037;
+  --all-b-sh: #08f6;
+}
+.temaT .all-c4 {
+  --all-bg: #037
+}
+
+[class*="all-c5"] {/*5~> */
+  --all-C: #999;
+  --all-Ct: #999c;
+  --all-bg: #ccc;
+  --all-bg-93: #222e;
+  --all-bg-20: #9992;
+  --all-br: #555;
+  --all-b-sh: #8886;
+}
+.temaT .all-c5 {
+  --all-bg: #444
+}
+
+[class*="all-c6"] {/*6~> */
+  --all-C: #f0f;
+  --all-Ct: #f0fc;
+  --all-bg: #faf;
+  --all-bg-93: #f0fe;
+  --all-bg-20: #f0f2;
+  --all-br: #505;
+  --all-b-sh: #f0f6;
+}
+.temaT .all-c6 {
+  --all-bg: #616
+}
+
+[class*="all-c7"] {/*7~> */
+  --all-C: #0bb;
+  --all-Ct: #0bbc;
+  --all-bg: #bff;
+  --all-bg-93: #022e;
+  --all-bg-20: #0bb2;
+  --all-br: #055;
+  --all-b-sh: #0bb6;
+}
+.temaT .all-c7 {
+  --all-bg: #066;
+}
+
+[class*="all-c8"] {/*8~> Чёрный - Для белого фона */
+  --all-C: #333;
+  --all-Ct: #222;
+  --all-bg: #eee;
+  --all-bg-93: #222e;
+  --all-bg-20: #3332;
+  --all-br: #000;
+  --all-b-sh: #3336;
+}
+.temaT .all-c8 {/* 8 Белый - Для тёмного фона */
+  --all-C: #ccc;
+  --all-Ct: #fff;
+  --all-bg: #222;
+  --all-bg-93: #222e;
+  --all-bg-20: #ccc2;
+  --all-br: #fff;
+  --all-b-sh: #ccc6;
+}
+/* ✦ --all- .all-c.. Цвета ✦ *//* #endregion */
+
+
+/* ✦ .temaT(Тёмный сайт), @media  ✦ *//* #region */
+.tema4-2,/* <= !!! удалить для индивидуального проекта */
+.temaT {/* Для всех тёмных фонов */
+  --rbg: #012;/* background: Фон сайта */
+  --rCt: #ccc;/* color:      Основной цвет для текста */
+}
+@media (prefers-color-scheme: dark) {/* Дублируем! Браузер использует тёмный фон и невыбрана .tema */
+  body:not([class*="tema"]) {
+    --rbg: #012;
+    --rCt: #ccc;
+  }
+  
+  body:not([class*="tema"]) .all-c0 {
+    --all-bg: #722
+  }
+  body:not([class*="tema"]) .all-c1 {
+    --all-bg: #050
+  }
+  body:not([class*="tema"]) .all-c2 {
+    --all-bg: #960
+  }
+  body:not([class*="tema"]) .all-c3 {
+    --all-bg: #880
+  }
+  body:not([class*="tema"]) .all-c4 {
+    --all-bg: #037
+  }
+  body:not([class*="tema"]) .all-c5 {
+    --all-bg: #444
+  }
+  body:not([class*="tema"]) .all-c6 {
+    --all-bg: #616
+  }
+  body:not([class*="tema"]) .all-c7 {
+    --all-bg: #066;
+  }
+  body:not([class*="tema"]) .all-c8 {
+    --all-C: #ccc;
+    --all-Ct: #fff;
+    --all-bg: #222;
+    --all-bg-93: #222e;
+    --all-bg-20: #ccc2;
+    --all-br: #fff;
+    --all-b-sh: #ccc6;
+  }
+}
+/* ✦ .temaT(Тёмный сайт), @media ✦✦ *//* #endregion */
+
+/* ✦ body ✦ *//* #region */
+body {
+  /* Тема сайта: (По умолчанию светлая тема) */
+  --bg: var(--rbg, #fff);/* background: Фон сайта */
+  --Ct: var(--rCt, #333);/* color:      Основной цвет для текста */
+  
+  --C: var(--rC, #000);
+  /* --C:
+    • xz:
+    Скрыть/Показать:        - fieldset > :first-child > dl button p.
+    Для Подсветки:          - #cod code
+    
+    • uCoz:
+    Заголовки, logo,
+    Меню:
+    иконка                      - .M nav > dl button.nM0,
+    button-текст                - .MkS,
+    Категории - Открыть/Закрыть - .Mk > dl button.
+  */
+  --B-C: var(--rB-C, #59f);/* button */
+}
+/* ✦ body ✦ *//* #endregion */
+
+
+/* ✦ .temaT(Тёмный сайт) !!! Индивидуально для проекта !!! ✦ *//* #region */
+.temaT .proekt {/* Для всех тёмных фонов */
+  --primer: #f00;/* Ваша переменная */
+}
+@media (prefers-color-scheme: dark) {/* Дублируем! Браузер использует тёмный фон и невыбрана .tema */
+  body:not([class*="tema"]) .proekt {
+    --primer: #f00;
+  }
+}
+/* ✦ .temaT(Тёмный сайт) !!! Индивидуально для проекта !!! ✦ *//* #endregion */
+
+/* !!! Использовать только для конкретных элементов проекта !!!
+  Ибо будет конфликт: */
+#x, #x::after, #x::before,
+#x > *, #x > *::after, #x > *::before {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  box-sizing: border-box;
+  line-height: 1.1;
+  font-size: inherit;/* уравнивает все элементы */
+}
+
+/* ✦ Проект ✦ *//* #region */
+    /* ✦✦ ! ✦✦ *//* #region */
+.proekt {
+  
+}
+    /* ✦✦ ! ✦✦ *//* #endregion */
+/* ✦ Проект ✦ *//* #endregion */

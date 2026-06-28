@@ -10,7 +10,7 @@
   
   <!-- ucoz -->
   <link href="https://zam.usite.pro/css/root.css" rel="stylesheet"><!-- --all-c[0-9] -->
-  <link href="https://zam.usite.pro/css/z.css" rel="stylesheet">
+  <link !href="https://zam.usite.pro/css/z.css" rel="stylesheet">
   <script src="https://zam.usite.pro/js/z.js" defer></script>
   
   <!-- Временные/Отдельные: -->
@@ -28,38 +28,50 @@
   <script src="/gl/gl.js" defer></script>
 
   <!-- /.../ !!! Измени путь на свой проект: -->
-  <link href="/.../1-0-0/ok.css" rel="stylesheet">
-  <script src="/.../1-0-0/ok.js" defer></script>
+  <link href="/zTema/1-0-0/ok.css" rel="stylesheet">
+  <script src="/zTema/1-0-0/ok.js" defer></script>
 </head>
 <body><div id="M"><div></div></div>
   <!-- <header><nav></nav></header> -->
   <main>
-    <div style="--zHidH:6ex" zhid="1">
-      <div class="ram-V0 ram-V2 gI-pre all-c0 zHidgITop"><div><button zhidb><p><s></s></p></button>
-        <u>Подготовка к началу проекта</u>:
-        <ul class="ram-V0 all-c8">
-          <li><b>1</b> В &lt;head> для шаблона localhost, удалить(gl.css, gl.js)! и разрешить 'Для шаблона www'</li>
-          <li><b>2</b> Измени путь на свой проект &lt;head> ok.(css,js)</li>
-          <li><b>3</b> Раздел "Подсказки" удалить!</li>
-        </ul>
-      </div></div>
-    </div>
-    <!-- ================= -->
-    
     <!-- Тэстируем: --> 
-    <fieldset class="all-c4" style="--zHid: 7ex;" zhid="1">
+    <fieldset class="all-c4" style="--zHid: 7ex;" zhid="0">
       <legend><button zhidb><p><s></s></p><b>Тэстируем</b></button></legend>
-      1
-        
-      <br><h4 class="hr-n1 all-c7"><b>2 ячейки:</b></h4>
-      2
+      Для корректного отображения удалить из db браузера: tema_root <br><br> 
+      &nbsp; &nbsp; &nbsp; 0: 
+      <div ztema="0">
+        <button class="B-Ig-DN0 zTemaO" nebl><p></p><p></p></button>
+        <button class="B-Ig-DN1" nebl><p></p><p></p></button>
+        <button class="B-Ig-DN2" nebl><p></p><p></p></button>
+      </div>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1: 
+      <div ztema="1">
+        <button class="B-Ig-DN0" nebl><p></p><p></p></button>
+        <button class="B-Ig-DN1 zTemaO" nebl><p></p><p></p></button>
+        <button class="B-Ig-DN2" nebl><p></p><p></p></button>
+      </div>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2: 
+      <div ztema="2">
+        <button class="B-Ig-DN0 " nebl><p></p><p></p></button>
+        <button class="B-Ig-DN1" nebl><p></p><p></p></button>
+        <button class="B-Ig-DN2 zTemaO" nebl><p></p><p></p></button>
+      </div>
+      
+      <br><br>
+      <br><h4 class="hr-n1 all-c7"><b>Закрытый:</b></h4>
+      &nbsp; &nbsp; &nbsp; 
+      <div class="zTemaX" ztema="0">
+        <button class="B-Ig-DN0 zTemaO" nebl><p></p><p></p></button>
+        <button class="B-Ig-DN1" nebl><p></p><p></p></button>
+        <button class="B-Ig-DN2" nebl><p></p><p></p></button>
+      </div>
     </fieldset>
 
     <h4 class="hr-n1 all-c0"><b>Презентация</b></h4>
     <!-- ••• Презентация НАЧАЛО: ••• -->
 
     <!-- Пример проекта: -->
-    <fieldset class="all-c1" style="--zHid: 17ex;" zhid="0">
+    <fieldset none class="all-c1" style="--zHid: 17ex;" zhid="0">
       <legend><button zhidb><p><s></s></p><b>Пример</b></button></legend>
     
       <!-- Ваш пример -->
@@ -98,7 +110,7 @@
     <!-- ••• --------- ••• -->
     
     <!-- Пример проекта 2: -->
-    <fieldset class="all-c1" style="--zHid: 13ex;" zhid="0">
+    <fieldset none class="all-c1" style="--zHid: 13ex;" zhid="0">
       <legend><button zhidb><p><s></s></p><b>Пример2</b></button></legend>
     
       <!-- Ваш пример -->
@@ -136,7 +148,7 @@
     <!-- ••• Презентация КОНЕЦ! ••• -->
     
     <!-- Полезное: -->
-    <fieldset class="all-c4" style="--zHid: 7ex; " zhid="1">
+    <fieldset none class="all-c4" style="--zHid: 7ex; " zhid="1">
       <legend><button zhidb><p><s></s></p><b>Полезное</b></button></legend>
       
       <div class="zCodR3 zHid2 ram-n3 all-c4" style="--zHidH:12ex;" zhid="1">
@@ -164,6 +176,7 @@
       gl.$();//Запуск инструментов (bg,resize,menu...)
       z.z.Start.$();//Запуск: Скрыть/Показать (hidden), Подсветка кодов, 
       zPrez.razC.$();//Вешаем click 'Цветовые варианты'
+      zTema.on();//★ Вешаем click 'Тема сайта Авто/День/Ночь'
       
       setTimeout(() => {//Загрузка сайта
         e.style.width=0;

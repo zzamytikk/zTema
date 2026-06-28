@@ -1,0 +1,252 @@
+/*  ✪ https://zam.usite.pro/publ/...
+    ✫ Версия 1.0.0
+    © Copyright Плюшки для сайтов 2024
+*/
+
+/* !!! Использовать только для конкретных элементов проекта !!!
+  Ибо будет конфликт: */
+[class*="B-"], [class*="B-"] *,
+[class*="B-"] *::after, [class*="B-"] *::before {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  box-sizing: border-box;
+  line-height: 1.1;
+  font-size: inherit;/* уравнивает все элементы */
+}
+
+/* ✦ a, button (.B-L Загрузка...) ✦ *//* #region */
+    /* ✦✦ ! :hover/disabled/.B-L ✦✦ *//* #region */
+[class*="B-"] {
+  --B-bg: var(--bg);/* background (input, textarea) */
+  --B-I-C: var(--B-C);/* Свой цвет иконки <button style="--B-I-C: #fff" */
+  display: inline-flex;
+  align-items: center;/* Для выравнивания по Центру b */
+  padding: 2px;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: unset;
+  transition: .3s;
+}
+
+/* hover: */
+[class*="B-"]:is(button, a):not([disabled]):hover > *,/* :is(p,b) Затемнение при наведении мышки */
+.B-i-CR:hover input:not([disabled]) ~ b,
+/* [disabled] */
+.Bstop :is(/* Для всех какбы disabled */
+  [class*="B-"]:is(button, a):not(.B-L, [class*="B-i"]) > *,/* button,a */
+  :is(.B-i-CR, [class*="B-i-R"]):not(.B-L) input ~ *,/* input[radio,checkbox] */
+  :is([class*="B-i"], .B-S):not(.B-L, .B-i-CR) :is(input,textarea,select)
+),
+[class*="B-"]:is(button ,a)[disabled]:not(.B-L) > *,
+:is(.B-i-CR, [class*="B-i-R"]) > [disabled] ~ *,/* input[radio,checkbox] */
+:is([class*="B-i"], .B-S):not(.B-L, .B-i-CR) [disabled]:is(input,textarea,select) {
+  opacity: .3;
+}
+@media (hover: none) and (pointer: coarse) {/* смартфоны, устройства с сенсорным экраном */
+  [class*="B-"]:is(button, a):not([disabled]):hover > *,
+  .B-i-CR:hover input:not([disabled]) ~ b {/* Отжимает opacity.3 (Когда на телефоне остаёдся гореть после нажатия) */
+    opacity: 1;
+    color: var(--B-C);
+  }
+}
+
+/* Убераем возможнасть нажать! Когда установлено: <body class="Bstop" или <button,input.. disabled
+  
+  Пример когда вешаем click:
+  
+  $('button').click(e => {
+    if($(e.currentTarget).css('pointer-events') == 'none') {//Остановим обработку
+      return;
+    }
+    //Ваш код...
+  });
+*/
+[class*="B-"]:is(button, a):is(.B-L, [disabled]),/* button,a */
+[class*="B-i-T"] [disabled],/* input[text], textarea */
+:is([class*="B-i"], .B-S) [disabled] > *,/* input[radio,checkbox], select */
+.Bstop [class*="B-"] {/* Для всего */
+  /* cursor: default; */
+  pointer-events: none;
+}
+    /* ✦✦ ! :hover/disabled/.B-L ✦✦ *//* #endregion */
+
+    /* ✦✦ click Отображение нажатия кнопки ✦✦ *//* #region */
+        /* ✦✦✦ ! ✦✦✦ *//* #region */
+/* • Полезное
+     :active Работает для:
+       a, button
+*/
+[class*="B-"]:is(button, a):not([disabled]):active::after,
+.B-i-CR > input:checked:not([disabled]) ~ s::before {z-index: 999;
+  content: '';
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+
+  box-shadow: inset 0 0 3px #ef06;
+  outline: 1px solid #ef06;
+
+  pointer-events: none;
+  animation: click_PL 1s forwards
+}
+@keyframes click_PL {
+    20% {
+      box-shadow: inset 0 0 5px 5px #ef06;
+      outline-width: 7px;
+    }
+    100% {
+      opacity:0;
+    }
+}
+        /* ✦✦✦ ! ✦✦✦ *//* #endregion */
+    /* ✦✦ click Отображение нажатия кнопки ✦✦ *//* #endregion */
+/* ✦ a, button (.B-L i Загрузка...) ✦ *//* #endregion */
+
+/* ✦ icon (Свои/google) ✦ *//* #region */
+    /* ✦✦ ! ✦✦ *//* #region */
+[class*="B-I"] {/* button style="--B-I-Om:8px" Изменить отступ */
+  --B-I-O: var(--B-I-Om, 4px);/* Отступ между <button(рамка) и <p(icon) <b(текст)*/
+  padding: var(--B-I-O);
+}
+[class*="B-I"]::before {/* Для выравнивания всех в 1 ряд, когда иконка без текста `© zam` */
+  content: 'z';
+  width: 0;/* Важно! width и height */
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  line-height: .9;
+}
+
+[class*="B-I"] p { /* icon. Для смещения иконки: p {margin-bottom/left: 4px;*/
+  display: inline-flex;/* Центруем для <s */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin:0; padding:0;/* margin/padding:0, Для p сброс (ucoz) */
+  width: 1em;
+  min-width: 1em;/* Помагает не сжаться, когда текст в b невмещяется */
+  height: 1em;
+  /*align-self: flex-start;*//* top */
+  align-self: center;
+}
+    /* ✦✦ ! ✦✦ *//* #endregion */
+/* ✦ icon (Свои/google) ✦ *//* #endregion */
+
+/* ✦ icon google .B-Ig- p ✦ *//* #region */
+    /* ✦✦ ! ✦✦ *//* #region */
+[class*="B-Ig"] p::after {
+  font: 400 1em 'Material icons';
+  color: var(--B-I-C);
+  transition: .5s;
+}
+    /* ✦✦ ! ✦✦ *//* #endregion */
+
+    /* ✦✦ .B-Ig-DN авто/День/Ночь ✦✦ *//* #region */
+        /* ✦✦✦ ! ✦✦✦ *//* #region */
+[class*="B-Ig-DN"] {
+  --B-I-br: #999;
+  background: var(--B-bg);
+  border-radius: 50%;
+  border: 1px solid var(--B-I-br);
+}
+[class*="B-Ig-DN"] p:nth-child(2) {
+  position: absolute;
+}
+/* Солнце: */
+.B-Ig-DN1 {
+  --B-I-br: #551
+}
+[class*="B-Ig-DN"]:not(.B-Ig-DN2) p:nth-child(1)::after {
+  content: '\e81a';
+  --B-I-C: #dd0;
+}
+/* Луна: */
+.B-Ig-DN2 {
+  --B-I-br: #037
+}
+[class*="B-Ig-DN"]:not(.B-Ig-DN1) p:nth-child(2)::after {
+  content: '\e3a8';
+}
+        /* ✦✦✦ ! ✦✦✦ *//* #endregion */
+
+        /* ✦✦✦ Авто Светлая/Тёмная ✦✦✦ *//* #region */
+.B-Ig-DN0 p {
+  filter: grayscale(100%);
+  transform: rotate(-45deg);
+}
+.B-Ig-DN0 p:nth-child(1)::after {
+  left: -.25em;
+}
+.B-Ig-DN0 p:nth-child(2)::after {
+  right: -.4em;
+}
+        /* ✦✦✦ Авто Светлая/Тёмная ✦✦✦ *//* #endregion */
+    /* ✦✦ .B-Ig-DN авто/День/Ночь ✦✦ *//* #endregion */
+/* ✦ icon google .B-Ig- p ✦ *//* #endregion */
+
+/* ✦ Для анимации авто/День/Ночь ✦ *//* #region */
+    /* ✦✦ ! ✦✦ *//* #region */
+[ztema] {z-index: 2;
+  opacity: 0;/* При установки .on('click') установим 1 */
+  display: inline-block;
+  position: relative;
+  animation: zTema 2s forwards;
+  animation-delay: .5s;/* задержка (Прячим анимацию при старте) */
+}
+@keyframes zTema {
+  to {
+    opacity: 1;
+  }
+}
+
+[ztema] button {/* Для начала анимации: */
+  opacity: 1;
+  left: 0;
+  bottom: 0;
+}
+[ztema] > :not(.B-Ig-DN0) {/* Кроме .B-Ig-DN0 (Для сохранения размера ячейки) */
+  position: absolute;
+}
+    /* ✦✦ !  ✦✦ *//* #endregion */
+
+    /* ✦✦ Какая кнопка нажата(в открытом положении) ✦✦ *//* #region */
+/* 0 - Авто, 1 - День, 2 - Ночь: */
+[ztema="0"] .B-Ig-DN1,
+[ztema="1"] .B-Ig-DN2,
+[ztema="2"] .B-Ig-DN0 {
+  left: -1.1em;
+  bottom: -1.7em;
+}
+[ztema="0"] .B-Ig-DN2,
+[ztema="1"] .B-Ig-DN0,
+[ztema="2"] .B-Ig-DN1 {
+  left: 1.1em;
+  bottom: -1.7em;
+}
+    /* ✦✦ Какая кнопка нажата(в открытом положении) ✦✦ *//* #endregion */
+
+    /* ✦✦ .zTemaO Выбранный button ✦✦ *//* #region */
+.zTemaO {/* Выбранный button авто/день/ночь */
+  z-index: 1
+}
+[ztema]:not(.zTemaX) .zTemaO {/* Выбранная кнопка, когда меню открыто */
+  opacity: .7;
+}
+    /* ✦✦ .zTemaO Выбранный button ✦✦ *//* #endregion */
+
+    /* ✦✦ .zTemaX Меню закрыто ✦✦ *//* #region */
+.zTemaX button:not(.zTemaO) {/* Спрячем button(Кроме выбранного): */
+  opacity: 0;
+  left: 0!important;
+  bottom: 0!important;
+  pointer-events: none;
+}
+    /* ✦✦ .zTemaX Меню закрыто ✦✦ *//* #endregion */
+/* ✦ Для анимации авто/День/Ночь ✦ *//* #endregion */

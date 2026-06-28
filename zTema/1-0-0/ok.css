@@ -5,8 +5,8 @@
 
 /* !!! Использовать только для конкретных элементов проекта !!!
   Ибо будет конфликт: */
-[class*="B-"], [class*="B-"] *,
-[class*="B-"] *::after, [class*="B-"] *::before {
+[ztema] > *, [ztema] > * > *,
+[ztema] > * > *::after, [ztema] > * > *::before {
   position: relative;
   margin: 0;
   padding: 0;
@@ -194,6 +194,7 @@
 /* ✦ Для анимации авто/День/Ночь ✦ *//* #region */
     /* ✦✦ ! ✦✦ *//* #region */
 [ztema] {z-index: 2;
+  --ztemaBT: 1.7em;/* Открыть меню низ */
   opacity: 0;/* При установки .on('click') установим 1 */
   display: inline-block;
   position: relative;
@@ -209,10 +210,14 @@
 [ztema] button {/* Для начала анимации: */
   opacity: 1;
   left: 0;
-  bottom: 0;
+  top: 0;
 }
 [ztema] > :not(.B-Ig-DN0) {/* Кроме .B-Ig-DN0 (Для сохранения размера ячейки) */
   position: absolute;
+}
+
+.zTemaT {/* !!! Установим открытие меню сверху */
+  --ztemaBT: -1.7em;/* Открыть меню Верх -1.7em */
 }
     /* ✦✦ !  ✦✦ *//* #endregion */
 
@@ -222,13 +227,13 @@
 [ztema="1"] .B-Ig-DN2,
 [ztema="2"] .B-Ig-DN0 {
   left: -1.1em;
-  bottom: -1.7em;
+  top: var(--ztemaBT);
 }
 [ztema="0"] .B-Ig-DN2,
 [ztema="1"] .B-Ig-DN0,
 [ztema="2"] .B-Ig-DN1 {
   left: 1.1em;
-  bottom: -1.7em;
+  top: var(--ztemaBT);
 }
     /* ✦✦ Какая кнопка нажата(в открытом положении) ✦✦ *//* #endregion */
 
@@ -245,8 +250,9 @@
 .zTemaX button:not(.zTemaO) {/* Спрячем button(Кроме выбранного): */
   opacity: 0;
   left: 0!important;
-  bottom: 0!important;
+  top: 0!important;
   pointer-events: none;
 }
     /* ✦✦ .zTemaX Меню закрыто ✦✦ *//* #endregion */
 /* ✦ Для анимации авто/День/Ночь ✦ *//* #endregion */
+

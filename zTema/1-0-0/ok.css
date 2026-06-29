@@ -169,7 +169,7 @@
 }
 /* Луна: */
 .B-Ig-DN2 {
-  --B-I-br: #037
+  --B-I-br: #03a
 }
 [class*="B-Ig-DN"]:not(.B-Ig-DN1) p:nth-child(2)::after {
   content: '\e3a8';
@@ -239,10 +239,11 @@
 
     /* ✦✦ .zTemaO Выбранный button ✦✦ *//* #region */
 .zTemaO {/* Выбранный button авто/день/ночь */
-  z-index: 1
+  z-index: 1;
+  --B-I-br: #0000;/* У выбранного убераем border */
 }
-[ztema]:not(.zTemaX) .zTemaO {/* Выбранная кнопка, когда меню открыто */
-  opacity: .7;
+[ztema]:not(.zTemaX) .zTemaO p {/* Выбранная кнопка, когда меню открыто */
+  opacity: .6;
 }
     /* ✦✦ .zTemaO Выбранный button ✦✦ *//* #endregion */
 

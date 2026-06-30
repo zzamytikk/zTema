@@ -20,7 +20,7 @@
 
 /* ✦ a, button (.B-L Загрузка...) ✦ *//* #region */
     /* ✦✦ ! :hover/disabled/.B-L ✦✦ *//* #region */
-[class*="B-"] {
+[class*="B-Ig-DN"] {
   --B-bg: var(--bg);/* background (input, textarea) */
   --B-I-C: var(--B-C);/* Свой цвет иконки <button style="--B-I-C: #fff" */
   display: inline-flex;
@@ -33,22 +33,15 @@
 }
 
 /* hover: */
-[class*="B-"]:is(button, a):not([disabled]):hover > *,/* :is(p,b) Затемнение при наведении мышки */
-.B-i-CR:hover input:not([disabled]) ~ b,
+[class*="B-Ig-DN"]button:not([disabled]):hover > *,/* :is(p,b) Затемнение при наведении мышки */
 /* [disabled] */
-.Bstop :is(/* Для всех какбы disabled */
-  [class*="B-"]:is(button, a):not(.B-L, [class*="B-i"]) > *,/* button,a */
-  :is(.B-i-CR, [class*="B-i-R"]):not(.B-L) input ~ *,/* input[radio,checkbox] */
-  :is([class*="B-i"], .B-S):not(.B-L, .B-i-CR) :is(input,textarea,select)
-),
-[class*="B-"]:is(button ,a)[disabled]:not(.B-L) > *,
-:is(.B-i-CR, [class*="B-i-R"]) > [disabled] ~ *,/* input[radio,checkbox] */
-:is([class*="B-i"], .B-S):not(.B-L, .B-i-CR) [disabled]:is(input,textarea,select) {
+.Bstop /* Для всех какбы disabled */
+[class*="B-Ig-DN"]button:not(.B-L, [class*="B-i"]) > *,/* button,a */
+[class*="B-Ig-DN"]button[disabled]:not(.B-L) > * {
   opacity: .3;
 }
 @media (hover: none) and (pointer: coarse) {/* смартфоны, устройства с сенсорным экраном */
-  [class*="B-"]:is(button, a):not([disabled]):hover > *,
-  .B-i-CR:hover input:not([disabled]) ~ b {/* Отжимает opacity.3 (Когда на телефоне остаёдся гореть после нажатия) */
+  [class*="B-Ig-DN"]button:not([disabled]):hover > * {/* Отжимает opacity.3 (Когда на телефоне остаёдся гореть после нажатия) */
     opacity: 1;
     color: var(--B-C);
   }
@@ -65,9 +58,7 @@
     //Ваш код...
   });
 */
-[class*="B-"]:is(button, a):is(.B-L, [disabled]),/* button,a */
-[class*="B-i-T"] [disabled],/* input[text], textarea */
-:is([class*="B-i"], .B-S) [disabled] > *,/* input[radio,checkbox], select */
+[class*="B-Ig-DN"]button:is(.B-L, [disabled])/* button,a */
 .Bstop [class*="B-"] {/* Для всего */
   /* cursor: default; */
   pointer-events: none;
@@ -80,8 +71,7 @@
      :active Работает для:
        a, button
 */
-[class*="B-"]:is(button, a):not([disabled]):active::after,
-.B-i-CR > input:checked:not([disabled]) ~ s::before {z-index: 999;
+[class*="B-Ig-DN"]button:not([disabled]):active::after {z-index: 999;
   content: '';
   position: absolute;
   left: 0;
@@ -111,11 +101,11 @@
 
 /* ✦ icon (Свои/google) ✦ *//* #region */
     /* ✦✦ ! ✦✦ *//* #region */
-[class*="B-I"] {/* button style="--B-I-Om:8px" Изменить отступ */
+[class*="B-Ig-DN"] {/* button style="--B-I-Om:8px" Изменить отступ */
   --B-I-O: var(--B-I-Om, 4px);/* Отступ между <button(рамка) и <p(icon) <b(текст)*/
   padding: var(--B-I-O);
 }
-[class*="B-I"]::before {/* Для выравнивания всех в 1 ряд, когда иконка без текста `© zam` */
+[class*="B-Ig-DN"]::before {/* Для выравнивания всех в 1 ряд, когда иконка без текста `© zam` */
   content: 'z';
   width: 0;/* Важно! width и height */
   overflow: hidden;
@@ -124,7 +114,7 @@
   line-height: .9;
 }
 
-[class*="B-I"] p { /* icon. Для смещения иконки: p {margin-bottom/left: 4px;*/
+[class*="B-Ig-DN"] p { /* icon. Для смещения иконки: p {margin-bottom/left: 4px;*/
   display: inline-flex;/* Центруем для <s */
   justify-content: center;
   align-items: center;
@@ -141,7 +131,7 @@
 
 /* ✦ icon google .B-Ig- p ✦ *//* #region */
     /* ✦✦ ! ✦✦ *//* #region */
-[class*="B-Ig"] p::after {
+[class*="B-Ig-DN"] p::after {
   font: 400 1em 'Material icons';
   color: var(--B-I-C);
   transition: .5s;
@@ -151,7 +141,7 @@
     /* ✦✦ .B-Ig-DN авто/День/Ночь ✦✦ *//* #region */
         /* ✦✦✦ ! ✦✦✦ *//* #region */
 [class*="B-Ig-DN"] {
-  --B-I-O: .4em;/* em Важно для пропорций рамки и иконки 'авто' при увеличении font-size */
+  --B-I-O: .3em;/* em Важно для увеличения */
   --B-I-br: #999;
   background: var(--B-bg);
   border-radius: 50%;

@@ -151,6 +151,7 @@
     /* ✦✦ .B-Ig-DN авто/День/Ночь ✦✦ *//* #region */
         /* ✦✦✦ ! ✦✦✦ *//* #region */
 [class*="B-Ig-DN"] {
+  --B-I-O: .4em;/* em Важно для пропорций рамки и иконки 'авто' при увеличении font-size */
   --B-I-br: #999;
   background: var(--B-bg);
   border-radius: 50%;

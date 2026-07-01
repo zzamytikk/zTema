@@ -146,6 +146,7 @@
   background: var(--B-bg);
   border-radius: 50%;
   border: 1px solid var(--B-I-br);
+  box-shadow: inset 0 0 3px var(--B-I-br);
 }
 [class*="B-Ig-DN"] p:nth-child(2) {
   position: absolute;

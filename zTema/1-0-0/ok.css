@@ -232,11 +232,11 @@
     /* ✦✦ .zTemaO Выбранный button ✦✦ *//* #region */
 .zTemaO {/* Выбранный button авто/день/ночь */
   z-index: 1;
-  --B-I-br: #0000;/* У выбранного убераем border */
-  --B-bg: #0000
+  --B-I-br: #0000!important;/* У выбранного убераем border */
+  --B-bg: #0000!important
 }
 [ztema]:not(.zTemaX) .zTemaO p {/* Выбранная кнопка, когда меню открыто */
-  opacity: .6;
+  opacity: .6!important;
 }
     /* ✦✦ .zTemaO Выбранный button ✦✦ *//* #endregion */
 
@@ -249,4 +249,3 @@
 }
     /* ✦✦ .zTemaX Меню закрыто ✦✦ *//* #endregion */
 /* ✦ Для анимации авто/День/Ночь ✦ *//* #endregion */
-

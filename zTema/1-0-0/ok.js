@@ -2,7 +2,15 @@
     ✫ Версия 1.0.0
     © Copyright Плюшки для сайтов 2024
 */
+/* • div[ztema]:
+      .zTemaT   - Установим открытие меню сверху (По умолчанию откроется снизу)
 
+      .zTemaX   - Меню закрыто
+      ztema="0" - Кокой раздел открыт (0 - Авто, 1 - День, 2 - Ночь)
+      
+   • button:
+      .zTemaO   - Кокой раздел открыт (0 - Авто, 1 - День, 2 - Ночь)
+*/
 //★ Тема сайта Авто/День/Ночь:
 var zTema = {
 //Обработка click
@@ -23,7 +31,7 @@ var zTema = {
       
       //console.debug('index нажатой:', i);
       this.f.db.pish('zTema', i);//Сохраним выбор
-      this.r.$(d, i);//Установим в button и :root Авто/День/Ночь
+      this.r.$(d, +i);//Установим в button и :root Авто/День/Ночь
       
       this.X(d);//Закроем + удалим click вне элемента
     }
@@ -33,10 +41,10 @@ var zTema = {
     a: ['light dark', 'only light', 'only dark'],
     /** this.r.$(d, i);//Установим в button и :root Авто/День/Ночь
      *  @param  { $('div[ztema]') } d - Внутри все button
-     *  @param  { number }          i - id режима
+     *  @param  { number }          i - id режима: 0 - Всё, 1 - день, 2 - ночь
      */
     $: function(d, i) {
-      i = function(i){return i>=0 && i<3?i:0}(+i);//0 || 1 || 2
+      i = i>=0 && i<3? i : 0;//0 || 1 || 2
       
       $('.zTemaO', d).removeClass('zTemaO');//Удалим предыдущие нажатие
       $('.B-Ig-DN'+i, d).addClass('zTemaO');//Выберем нажаттый button
@@ -49,8 +57,9 @@ var zTema = {
   on: function() {
     let i = this.f.db.chit('zTema');//Проверим сохранения
     
-    if (i) { //Была запись в db
-      this.r.$($('[ztema]'), i);//Установим в button и :root Авто/День/Ночь
+    //console.debug((typeof i) + ', i:', i + ', +i:', (+i)+ ', typeof +i', typeof +i);
+    if(i) {
+      this.r.$($('[ztema]'), +i);//Установим в button и :root Авто/День/Ночь
     }
     
     $('[ztema]').on('click', 'button', e => {
@@ -78,7 +87,8 @@ var zTema = {
     $(document).off('.zTema');//Уберём вне элемента
     d.addClass('zTemaX');//Закроем меню
   },
-  f: { //funk zTema.db.chit
+//funk zTema.db.chit
+  f: {
     //Сохранить в db браузера:
     db: {
       /* 

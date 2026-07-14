@@ -187,11 +187,11 @@
     /* ✦✦ ! ✦✦ *//* #region */
 [ztema] {z-index: 2;
   --ztemaBT: 1.7em;/* Открыть меню низ */
-  opacity: 0;/* При установки .on('click') установим 1 */
+  opacity: 1;/* 0 При установки .on('click') установим 1 */
   display: inline-block;
   position: relative;
-  animation: zTema 2s forwards;
-  animation-delay: .5s;/* задержка (Прячим анимацию при старте) */
+  animation: zTema 0s forwards;
+  animation-delay: .0s;/* 2 .5 задержка (Прячим анимацию при старте) */
 }
 @keyframes zTema {
   to {
@@ -203,6 +203,11 @@
   opacity: 1;
   left: 0;
   top: 0;
+  transition: .3s,
+    opacity .3s,
+    background 0s,/* Плохо в переходе */
+    border .2s, box-shadow .2s,
+    transform .4s
 }
 [ztema] > :not(.B-Ig-DN0) {/* Кроме .B-Ig-DN0 (Для сохранения размера ячейки) */
   position: absolute;
@@ -210,6 +215,10 @@
 
 .zTemaT {/* !!! Установим открытие меню сверху */
   --ztemaBT: -1.7em;/* Открыть меню Верх -1.7em */
+}
+
+html:not([style*=color-scheme]) [ztema] button::after {
+  content: none!important/* Уберём отображенние клика по button, когда скрипт небыл загружен zTema.on(); */
 }
     /* ✦✦ !  ✦✦ *//* #endregion */
 
@@ -229,22 +238,30 @@
 }
     /* ✦✦ Какая кнопка нажата(в открытом положении) ✦✦ *//* #endregion */
 
-    /* ✦✦ .zTemaO Выбранный button ✦✦ *//* #region */
-.zTemaO {/* Выбранный button авто/день/ночь */
+    /* ✦✦ .zTemaO Выбранный button, .zTemaX ✦✦ *//* #region */
+.zTemaO, .zTemaX > button:not(.zTemaO) {/* Выбранный button авто/день/ночь, Не выбранные кнопки когда Меню закрыто(Для анимации при загрузки страницы) */
   z-index: 1;
-  --B-I-br: #0000!important;/* У выбранного убераем border */
-  --B-bg: #0000!important
+  --B-I-br: #0000!important;/* У выбранного убераем border, */
+  --B-bg: #0000!important;  /* и background */
 }
+
 [ztema]:not(.zTemaX) .zTemaO p {/* Выбранная кнопка, когда меню открыто */
   opacity: .6!important;
 }
-    /* ✦✦ .zTemaO Выбранный button ✦✦ *//* #endregion */
+    /* ✦✦ .zTemaO Выбранный button, .zTemaX ✦✦ *//* #endregion */
 
     /* ✦✦ .zTemaX Меню закрыто ✦✦ *//* #region */
+.zTemaX .zTemaO {/* Нажатая кнопка, при закрытии меню */
+  transition: .7s,
+    background 0s,/* Плохо в переходе */
+    border .2s, box-shadow .2s
+}
+
 .zTemaX button:not(.zTemaO) {/* Спрячем button(Кроме выбранного): */
   opacity: 0;
   left: 0!important;
   top: 0!important;
+  transform: scale(0);
   pointer-events: none;
 }
     /* ✦✦ .zTemaX Меню закрыто ✦✦ *//* #endregion */

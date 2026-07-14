@@ -187,16 +187,8 @@
     /* ✦✦ ! ✦✦ *//* #region */
 [ztema] {z-index: 2;
   --ztemaBT: 1.7em;/* Открыть меню низ */
-  opacity: 1;/* 0 При установки .on('click') установим 1 */
   display: inline-block;
   position: relative;
-  animation: zTema 0s forwards;
-  animation-delay: .0s;/* 2 .5 задержка (Прячим анимацию при старте) */
-}
-@keyframes zTema {
-  to {
-    opacity: 1;
-  }
 }
 
 [ztema] button {/* Для начала анимации: */
@@ -205,7 +197,7 @@
   top: 0;
   transition: .3s,
     opacity .3s,
-    background 0s,/* Плохо в переходе */
+    background 0s,/* не 0, плохо в переходе */
     border .2s, box-shadow .2s,
     transform .4s
 }
@@ -253,7 +245,7 @@ html:not([style*=color-scheme]) [ztema] button::after {
     /* ✦✦ .zTemaX Меню закрыто ✦✦ *//* #region */
 .zTemaX .zTemaO {/* Нажатая кнопка, при закрытии меню */
   transition: .7s,
-    background 0s,/* Плохо в переходе */
+    background 0s,/* Не 0, плохо в переходе */
     border .2s, box-shadow .2s
 }
 

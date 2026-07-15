@@ -67,29 +67,21 @@
 
     /* ✦✦ click Отображение нажатия кнопки ✦✦ *//* #region */
         /* ✦✦✦ ! ✦✦✦ *//* #region */
-/* • Полезное
-     :active Работает для:
-       a, button
-*/
+/* :active Работает для: a, button */
 [class*="B-Ig-DN"]button:not([disabled]):active::after {z-index: 999;
-  content: '';
+  content: ''; /* Для отключения unset */
   position: absolute;
   left: 0;
   top:0;
   width: 100%;
   height: 100%;
-  border-radius: 4px;
-
-  box-shadow: inset 0 0 3px #ef06;
-  outline: 1px solid #ef06;
-
+  border-radius: inherit;
   pointer-events: none;
   animation: click_PL 1s forwards
 }
 @keyframes click_PL {
     20% {
-      box-shadow: inset 0 0 5px 5px #ef06;
-      outline-width: 7px;
+      box-shadow: inset 0 0 5px 5px #ef03;
     }
     100% {
       opacity:0;

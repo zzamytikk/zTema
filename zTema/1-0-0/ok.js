@@ -46,7 +46,7 @@ var zTema = {
     $: function(d, i) {
       i = i>=0 && i<3? i : 0;//0 || 1 || 2
       
-      $('body').addClass('zTema0');//Убераем таймеры. (Убераем разную смену дизайна у элементов.)
+      $('html').addClass('zTema0');//Убераем таймеры. (Убераем разную смену дизайна у элементов.)
       
       $('.zTemaO', d).removeClass('zTemaO');//Удалим предыдущие нажатие
       $('.B-Ig-DN'+i, d).addClass('zTemaO');//Выберем нажаттый button
@@ -54,7 +54,7 @@ var zTema = {
       $(':root').css('color-scheme', this.a[i]);
       d.attr('ztema', i);//Выберем нажатый режим
       
-      setTimeout(() => {$('body').removeClass('zTema0')}, 1);
+      setTimeout(() => {$('html').removeClass('zTema0')}, 1);
     }
   },
 //zTema.on();//★ Вешаем click 'Темaа сайта Авто/День/Ночь':

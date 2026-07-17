@@ -207,7 +207,7 @@ html:not([style*=color-scheme]) [ztema] button::after {
   content: none!important/* Уберём отображенние клика по button, когда скрипт небыл загружен zTema.on(); */
 }
 
-body.zTema0, body.zTema0 *:not([ztema] button), body.zTema0 *::after, body.zTema0 *::before {/* Убераем таймеры. (Убераем разную смену дизайна у элементов.) */
+html.zTema0 *:not([ztema] button), html.zTema0 *::after, html.zTema0 *::before {/* Убераем таймеры. (Убераем разную смену дизайна у элементов.) */
   transition: unset!important;
 }
     /* ✦✦ !  ✦✦ *//* #endregion */

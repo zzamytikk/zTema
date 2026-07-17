@@ -159,10 +159,6 @@
 [class*="B-Ig-DN"]:not(.B-Ig-DN1) p:nth-child(2)::after {
   content: '\e3a8';
 }
-
-body.zTema0, body.zTema0 *:not([ztema] button) {/* Убераем таймеры. (Убераем разную смену дизайна у элементов.) */
-  transition: unset!important;
-}
         /* ✦✦✦ ! ✦✦✦ *//* #endregion */
 
         /* ✦✦✦ Авто Светлая/Тёмная ✦✦✦ *//* #region */
@@ -209,6 +205,10 @@ body.zTema0, body.zTema0 *:not([ztema] button) {/* Убераем таймеры
 
 html:not([style*=color-scheme]) [ztema] button::after {
   content: none!important/* Уберём отображенние клика по button, когда скрипт небыл загружен zTema.on(); */
+}
+
+body.zTema0, body.zTema0 *:not([ztema] button), body.zTema0 *::after, body.zTema0 *::before {/* Убераем таймеры. (Убераем разную смену дизайна у элементов.) */
+  transition: unset!important;
 }
     /* ✦✦ !  ✦✦ *//* #endregion */
 

@@ -36,7 +36,7 @@ var zTema = {
       this.X(d);//Закроем + удалим click вне элемента
     }
   },
-//Установим в :root Авто/День/Ночь:
+//Сменим тему. Установим в :root Авто/День/Ночь:
   r: {//0 - Всё, 1 - день, 2 - ночь
     a: ['light dark', 'only light', 'only dark'],
     /** this.r.$(d, i);//Установим в button и :root Авто/День/Ночь
@@ -46,11 +46,15 @@ var zTema = {
     $: function(d, i) {
       i = i>=0 && i<3? i : 0;//0 || 1 || 2
       
+      $('body').addClass('zTema0');//Убераем таймеры. (Убераем разную смену дизайна у элементов.)
+      
       $('.zTemaO', d).removeClass('zTemaO');//Удалим предыдущие нажатие
       $('.B-Ig-DN'+i, d).addClass('zTemaO');//Выберем нажаттый button
       
       $(':root').css('color-scheme', this.a[i]);
       d.attr('ztema', i);//Выберем нажатый режим
+      
+      setTimeout(() => {$('body').removeClass('zTema0')}, 1);
     }
   },
 //zTema.on();//★ Вешаем click 'Темaа сайта Авто/День/Ночь':

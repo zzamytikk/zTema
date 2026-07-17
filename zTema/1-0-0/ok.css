@@ -28,6 +28,7 @@
   padding: 2px;
   font: inherit;
   cursor: pointer;
+  border-radius: 3px;/* click Отображение нажатия кнопки */
   text-decoration: unset;
   transition: .3s;
 }
@@ -158,6 +159,10 @@
 [class*="B-Ig-DN"]:not(.B-Ig-DN1) p:nth-child(2)::after {
   content: '\e3a8';
 }
+
+body.zTema0, body.zTema0 *:not([ztema] button) {/* Убераем таймеры. (Убераем разную смену дизайна у элементов.) */
+  transition: unset!important;
+}
         /* ✦✦✦ ! ✦✦✦ *//* #endregion */
 
         /* ✦✦✦ Авто Светлая/Тёмная ✦✦✦ *//* #region */
@@ -174,6 +179,7 @@
         /* ✦✦✦ Авто Светлая/Тёмная ✦✦✦ *//* #endregion */
     /* ✦✦ .B-Ig-DN авто/День/Ночь ✦✦ *//* #endregion */
 /* ✦ icon google .B-Ig- p ✦ *//* #endregion */
+
 
 /* ✦ Для анимации авто/День/Ночь ✦ *//* #region */
     /* ✦✦ ! ✦✦ *//* #region */

@@ -30,6 +30,7 @@
   cursor: pointer;
   border-radius: 3px;/* click Отображение нажатия кнопки */
   text-decoration: unset;
+  -webkit-tap-highlight-color: transparent;/* Уберает подсветку или обводку кнопки на телефоне при нажатии */
   transition: .3s;
 }
 
@@ -45,6 +46,7 @@
   [class*="B-Ig-DN"]button:not([disabled]):hover > * {/* Отжимает opacity.3 (Когда на телефоне остаёдся гореть после нажатия) */
     opacity: 1;
     color: var(--B-C);
+    cursor: default; /* Уберёт на телефоне поивление мерцание click (Прозрачный квадрат) */
   }
 }
 

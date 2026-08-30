@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Шаблон ✓ Название проекта</title>
+  <title>Тема сайта «День/Ночь»</title>
   <link href="https://fonts.googleapis.com/css?family=Material+Icons|Comfortaa|Istok+Web:400,700&amp;subset=cyrillic" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
   
@@ -34,22 +34,11 @@
 <body><div id="M"><div></div></div>
   <!-- <header><nav></nav></header> -->
   <main>
-              <button class="B-I-hidV B-R-Io"><p><s></s></p></button>,
-      <div class="ram-V0 ram-V2 gI-inf zHidgITop all-c0" style="margin-top:0;"><div>
-        <u>Заголовок</u>:
-        <ul class="ram-V0 all-c8">
-          <ol class="proekt" style="color: var(--primer)">.proekt</ol>
-
-          <li>Без выделения</li>
-        </ul>
-      </div></div>
-
-
-
     <!-- Тэстируем: --> 
-    <fieldset class="all-c4" style="--zHid: 7ex;" zhid="0">
+    <fieldset class="all-c4" style="--zHid: 7ex;" zhid="1">
       <legend><button zhidb><p><s></s></p><b>Тэстируем</b></button></legend>
-      Для корректного отображения удалить из db браузера: tema_root <br><br> 
+      В db браузера Сохраняем root_zTema:<br>
+      &nbsp; &nbsp; (0 - Всё, 1 - день, 2 - ночь)<br><br>
       &nbsp; &nbsp; &nbsp; 0: 
       <div ztema="0">
         <button class="B-Ig-DN0 zTemaO"><p></p><p></p></button>
@@ -82,80 +71,73 @@
     <h4 class="hr-n1 all-c0"><b>Презентация</b></h4>
     <!-- ••• Презентация НАЧАЛО: ••• -->
 
+    <link href="/db/publ/zTema/1-0-0/m.css?1" rel="stylesheet"><!-- Вид -->
+    <script src="/db/publ/zTema/1-0-0/m.js?1" defer></script><!-- Мозг -->
+
+    <div class="zHidTxt" style="--zHid:9ex;" zhid>
+      <div class="ram-V0 ram-V2 gI-inf all-c1 zHidgITop"><div><button zhidb><p><s></s></p></button>
+        <span>
+          <b>День/Ночь</b> или (Light/Dark mode) это функция сайта, 
+          которая позволяет пользователю менять оформление интерфейса между светлыми и темными тонами.
+        </span>
+      </div></div>
+    </div>
+
     <!-- Пример проекта: -->
-    <fieldset none class="all-c1" style="--zHid: 17ex;" zhid="0">
-      <legend><button zhidb><p><s></s></p><b>Пример</b></button></legend>
+    <fieldset non class="all-c1">
+      <legend>Пример</legend>
     
       <!-- Ваш пример -->
-        <div class="ram-n0">Визуальный пример проекта!</div>
+      <div class="zTemaX" style="left: 50%;transform: translateX(-50%);" ztema="0">
+        <button class="B-Ig-DN0 zTemaO"><p></p><p></p></button>
+        <button class="B-Ig-DN1"><p></p><p></p></button>
+        <button class="B-Ig-DN2"><p></p><p></p></button>
+      </div><br><br><br>
       <!-- ---------- -->
-      
-      <div class="zHid2 zRazCh" style="--zHidH:9ex;" zhid="1"><button zhidb="2"><p><s></s></p></button>
-        <h4 class="hr-n1 hr-L"><b>Цветовые варианты + HTML:</b></h4>
-        
-        <div class="zRazC ram-n1-1 ram-V1 ram-V1-1X all-c5">
-          <!-- Необходимо добавить ваш пример в <pre> (Для отображения всех цветов).
-            !!! Важно установить class: all- !!! Для авто подбора всех цветовых шаблонов.
-            <br del> - в HTML примере будет удалён.
-          -->
-          <pre>
-            <div class="ram-n0 all-">
-              <div class="all-c7"></div>
-              текст...
-            </div>
-          </pre>
-        </div>
-      </div>
-      
-      <!--
-      <script>//!!!! Добавить в самый низ, ко всем scriptам:
-        document.addEventListener('DOMContentLoaded', () => {
-          /** zPrez.razC.$(i);//Вешаем click 'Цветовые варианты'
-            * 
-            *  @param  { number } i - Номер цвета при первой загрузке. undefined - 1
-            */
-          zPrez.razC.$();//Вешаем click 'Цветовые варианты'
-        });
-      </script>
-      -->
+      </code></div></pre>
     </fieldset>
     <!-- ••• --------- ••• -->
+    <br>
+    <h4 class="hr-n1 hr-L" style="--hr-Ct: var(--Ct)"><b>Подключение к сайту:</b></h4> 
     
-    <!-- Пример проекта 2: -->
-    <fieldset none class="all-c1" style="--zHid: 13ex;" zhid="0">
-      <legend><button zhidb><p><s></s></p><b>Пример2</b></button></legend>
+    <pre id="zCod" class="ram-n0 all-c5" data-ram-zag="HTML"><div><div></div><code class="v-BG0">
+    &lt;!-- Добавить в &lt;head>..&lt;/head>: -->
+    &lt;script src="https://code.jquery.com/jquery-3.7.1.min.js" defer>&lt;/script>&lt;!-- Библиотека jQuery -->
+    &lt;link href="https://zam.usite.pro/db/publ/zTema/1-0-0/m.css" rel="stylesheet">&lt;!-- Вид -->
+    &lt;script src="https://zam.usite.pro/db/publ/zTema/1-0-0/m.js" defer>&lt;/script>&lt;!-- Мозг -->
+    </code></div></pre>
     
-      <!-- Ваш пример -->
-        Там <u class="u-n0 all-c1">ёжику</u> присесть можно?<br>
-      <!-- ---------- -->
-      
-      <div class="zHid2 zRazCh" style="--zHidH:9ex;" zhid="1"><button zhidb="2"><p><s></s></p></button>
-        <h4 class="hr-n1 hr-L"><b>Цветовые варианты + HTML:</b></h4>
-        
-        <div class="zRazC ram-n1-1 ram-V1 ram-V1-1X all-c5">
-          <!-- Необходимо добавить ваш пример в <pre> (Для отображения всех цветов).
-            !!! Важно установить class: all- !!! Для авто подбора всех цветовых шаблонов.
-            <br del> - в HTML примере будет удалён.
-          -->
-          <pre>
-            Там <u class="u-n0 all-">ёжику</u> присесть можно?<br del>
-          </pre>
-        </div>
-      </div>
-      
-      <!--
-      <script>//!!!! Добавить в самый низ, ко всем scriptам:
-        document.addEventListener('DOMContentLoaded', () => {
-          /** zPrez.razC.$(i);//Вешаем click 'Цветовые варианты'
-            * 
-            *  @param  { number } i - Номер цвета при первой загрузке. undefined - 1
-            */
-          zPrez.razC.$();//Вешаем click 'Цветовые варианты'
-        });
-      </script>
-      -->
-    </fieldset>
-    <!-- ••• --------- ••• -->
+    <div><b style="color:red">►</b> Исходники(css, js): <a class="B-" href="https://github.com/zzamytikk/zTema/tree/main/zTema/1-0-0" target="_blank">github</a> <i style="opacity:.4">(m. - Сокращённый вариант, ok. - Подробный)</i></div>
+
+    <pre id="zCod" class="ram-n0 all-c5" data-ram-zag="HTML"><div><div></div><code class="v-BG0">
+    &lt;!-- Добавить в &lt;body>..&lt;/body>: -->
+    &lt;div class="zTemaX" ztema="0">
+      &lt;button class="B-Ig-DN0 zTemaO">&lt;p>&lt;/p>&lt;p>&lt;/p>&lt;/button>
+      &lt;button class="B-Ig-DN1">&lt;p>&lt;/p>&lt;p>&lt;/p>&lt;/button>
+      &lt;button class="B-Ig-DN2">&lt;p>&lt;/p>&lt;p>&lt;/p>&lt;/button>
+    &lt;/div>
+    
+    &lt;script>
+      document.addEventListener('DOMContentLoaded', () => {
+        zTema.on();//★ Запускаем 'Тема сайта Авто/День/Ночь'
+      });
+    &lt;/script>
+    </code></div></pre>
+    
+    <div class="ram-V0 ram-V2 gI-inf all-c7"><div>
+      <u>Полезная информация</u>:
+      <ul class="ram-V0 all-c8">
+        <li><b>class="zTemaT"</b> установит открытие меню сверху</li>
+      </ul> 
+    </div></div>
+
+    <pre id="zCod" class="ram-n0 all-c5" data-ram-zag="HTML"><div><div></div><code class="v-BG0">
+    &lt;div class="zTemaX zTemaT" ztema="0">
+      &lt;button class="B-Ig-DN0 zTemaO">&lt;p>&lt;/p>&lt;p>&lt;/p>&lt;/button>
+      &lt;button class="B-Ig-DN1">&lt;p>&lt;/p>&lt;p>&lt;/p>&lt;/button>
+      &lt;button class="B-Ig-DN2">&lt;p>&lt;/p>&lt;p>&lt;/p>&lt;/button>
+    &lt;/div>
+    </code></div></pre>
 
     <!-- ••• Презентация КОНЕЦ! ••• -->
     

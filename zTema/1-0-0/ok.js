@@ -57,7 +57,8 @@ var zTema = {
       setTimeout(() => {$('html').removeClass('zTema0')}, 1);
     }
   },
-//zTema.on();//★ Вешаем click 'Темaа сайта Авто/День/Ночь':
+//zTema.on();//★ Запускаем 'Темaа сайта Авто/День/Ночь':
+//Вешаем click:
   on: function() {
     let i = this.f.db.chit('zTema');//Проверим сохранения
     

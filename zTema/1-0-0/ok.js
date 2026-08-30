@@ -59,6 +59,7 @@ var zTema = {
   },
 //zTema.on();//★ Запускаем 'Темaа сайта Авто/День/Ночь':
 //Вешаем click:
+k:0,
   on: function() {
     let i = this.f.db.chit('zTema');//Проверим сохранения
     
@@ -67,9 +68,9 @@ var zTema = {
       this.r.$($('[ztema]'), +i);//Установим в button и :root Авто/День/Ночь
     }
     
-    $('[ztema]').on('click', 'button', e => {
+    $('[ztema]:not([onzpro])').on('click', 'button', e => {
       zTema.$(e);
-    });
+    }).attr('onzpro', '');//Защита от повторной установки .on
   },
 //Вешаем клик вне элемента:
   /**

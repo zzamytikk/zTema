@@ -86,21 +86,22 @@
     <!-- Пример проекта: -->
     <fieldset non class="all-c1">
       <legend>Пример</legend>
-    
+      <style>
+        #Korekcija {
+          font-size: 1.2em;
+        }
+        #Korekcija i {/* Для uCoz.  Ибо удаляет пустые <p> */
+          display: none;
+        }
+      </style>
       <!-- Ваш пример -->
-      <div class="zTemaX" style="left: 50%;transform: translateX(-50%);" ztema="0">
-        <button class="B-Ig-DN0 zTemaO"><p></p><p></p></button>
-        <button class="B-Ig-DN1"><p></p><p></p></button>
-        <button class="B-Ig-DN2"><p></p><p></p></button>
+      <div id="Korekcija" class="zTemaX" style="left: 50%;transform: translateX(-50%);" ztema="0">
+        <button class="B-Ig-DN0 zTemaO"><p><i></i></p><p><i></i></p></button>
+        <button class="B-Ig-DN1"><p><i></i></p><p><i></i></p></button>
+        <button class="B-Ig-DN2"><p><i></i></p><p><i></i></p></button>
       </div><br><br><br>
       <!-- ---------- -->
       </code></div></pre>
-      
-       <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          zTema.on();//★ Запускаем 'Темaа сайта Авто/День/Ночь'
-        });
-      </script>
     </fieldset>
     <!-- ••• --------- ••• -->
     <br>
